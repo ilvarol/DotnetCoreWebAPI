@@ -6,7 +6,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
-using Newtonsoft.Json.Serialization;
 using System;
 
 namespace DotnetCoreWebAPI
@@ -25,9 +24,7 @@ namespace DotnetCoreWebAPI
             services.AddDbContext<UserContext>(opt => opt.UseSqlServer
             (Configuration.GetConnectionString("DatabaseConnection")));
 
-            services.AddControllers().AddNewtonsoftJson(s => {
-                s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-            });
+            services.AddControllersWithViews();
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
@@ -42,7 +39,7 @@ namespace DotnetCoreWebAPI
             }
 
             app.UseHttpsRedirection();
-
+            app.UseStaticFiles();
             app.UseRouting();
 
             app.UseAuthorization();

@@ -1,0 +1,69 @@
+﻿@model DotnetCoreWebAPI.Models.User
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+@section head
+{
+    <script>
+        $(document).ready(function () {
+            $("#idForm").submit(function (e) {
+
+                e.preventDefault();
+
+                var form = $(this);
+                var url = "/api/users";
+
+                $.ajax({
+                    contentType: "application/json; charset=utf-8",
+                    type: "POST",
+                    url: url,
+                    data: JSON.stringify(form.serialize()),
+                    success: function (data) {
+                        alert(data);
+                    }
+                });
+            });
+        });
+    </script>
+}
+
+<h1>Create</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form id="idForm">
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Surname" class="control-label"></label>
+                <input asp-for="Surname" class="form-control" />
+                <span asp-validation-for="Surname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayNameFor(Model => Model.Blood)</label>
+                <select asp-for="Blood" asp-items="Html.GetEnumSelectList<DotnetCoreWebAPI.Blood>()" class="form-control">
+                    <option selected="selected" value="">Please select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cellphone" class="control-label"></label>
+                <input asp-for="Cellphone" class="form-control" />
+                <span asp-validation-for="Cellphone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adress" class="control-label"></label>
+                <input asp-for="Adress" class="form-control" />
+                <span asp-validation-for="Adress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

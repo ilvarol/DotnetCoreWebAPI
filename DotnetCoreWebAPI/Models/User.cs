@@ -14,7 +14,8 @@ namespace DotnetCoreWebAPI.Models
         [MaxLength(100)]
         public string Surname { get; set; }
 
-        public Enum.Blood Blood { get; set; }
+        [Display(Name = "Blood Group")]
+        public Blood Blood { get; set; }
 
         [MaxLength(50)]
         public string Cellphone { get; set; }

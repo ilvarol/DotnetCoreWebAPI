@@ -3,8 +3,6 @@ using Newtonsoft.Json.Converters;
 
 namespace DotnetCoreWebAPI
 {
-    public class Enum
-    {
         public enum Blood
         {
             ARhDpositive,
@@ -16,5 +14,4 @@ namespace DotnetCoreWebAPI
             ABRhDpositive,
             ABRhDnegative
         }
-    }
 }

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<DotnetCoreWebAPI.Models.User>
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(model => model.Id)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Name)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Surname)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Blood)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Cellphone)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Adress)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@Html.DisplayFor(modelItem => item.Id)</th>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Surname)</td>
+                <td>@Html.DisplayFor(modelItem => item.Blood)</td>
+                <td>@Html.DisplayFor(modelItem => item.Cellphone)</td>
+                <td>@Html.DisplayFor(modelItem => item.Adress)</td>
+            </tr>
+        }
+    </tbody>
+</table>

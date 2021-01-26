@@ -1,0 +1,32 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <title>Home</title>
+    <script src="~/js/bootstrap.bundle.js"></script>
+    <script src="~/js/jquery-3.5.1.min.js"></script>
+    @RenderSection("head", false)
+</head>
+<body>
+    <header>
+        <nav class="container-fluid d-flex flex-column flex-sm-row justify-content-center bg-dark">
+            <a class="mx-1 border-0 d-sm-inline-block btn btn-outline-secondary rounded-0" asp-action="Index">Home</a>
+            <a class="mx-1 border-0 border-top-0 d-sm-inline-block btn btn-outline-secondary rounded-0" asp-action="Create">Create</a>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="container py-5">
+        <div class="row">
+            <div class="col-12 col-md">
+                <small class="d-block mb-3 text-muted text-center">İlyas Varol | .Net Core 3.1 Web API Example Application | 2021</small>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

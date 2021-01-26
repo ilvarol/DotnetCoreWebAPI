@@ -11,12 +11,12 @@ namespace DotnetCoreWebAPI.Controllers
 {
     [Route("api/users")]
     [ApiController]
-    public class UsersControllers : ControllerBase
+    public class UsersController : ControllerBase
     {
         private readonly IUserRepo _repository;
         private readonly IMapper _mapper;
 
-        public UsersControllers(IUserRepo repository, IMapper mapper)
+        public UsersController(IUserRepo repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;

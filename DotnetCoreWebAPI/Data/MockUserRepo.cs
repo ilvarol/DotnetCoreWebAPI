@@ -19,9 +19,9 @@ namespace DotnetCoreWebAPI.Data
         {
             var users = new List<User>()
             {
-                new User { Id = 0, Name = "ilyas", Surname = "varol", Blood = Enum.Blood.ABRhDpositive, Cellphone = "5307767295", Adress="Ümraniye" },
-                new User { Id = 1, Name = "Büşra", Surname = "varol", Blood = Enum.Blood.ABRhDpositive, Cellphone = "5307767295", Adress="Ümraniye" },
-                new User { Id = 2, Name = "Atabey", Surname = "varol", Blood = Enum.Blood.ABRhDpositive, Cellphone = "5307767295", Adress="Ümraniye" },
+                new User { Id = 0, Name = "ilyas", Surname = "varol", Blood = Blood.ABRhDpositive, Cellphone = "5307767295", Adress="Ümraniye" },
+                new User { Id = 1, Name = "Büşra", Surname = "varol", Blood = Blood.ABRhDpositive, Cellphone = "5307767295", Adress="Ümraniye" },
+                new User { Id = 2, Name = "Atabey", Surname = "varol", Blood = Blood.ABRhDpositive, Cellphone = "5307767295", Adress="Ümraniye" },
             };
 
             return users;
@@ -29,7 +29,7 @@ namespace DotnetCoreWebAPI.Data
 
         public User GetUserById(int id)
         {
-            return new User { Id = 0, Name = "ilyas", Surname = "varol", Blood = Enum.Blood.ABRhDpositive, Cellphone = "5307767295", Adress = "Ümraniye" };
+            return new User { Id = 0, Name = "ilyas", Surname = "varol", Blood = Blood.ABRhDpositive, Cellphone = "5307767295", Adress = "Ümraniye" };
         }
 
         public bool SaveChanges()
