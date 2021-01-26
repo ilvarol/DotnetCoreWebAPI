@@ -44,7 +44,7 @@ namespace DotnetCoreWebAPI.Controllers
 
         //POST api/users
         [HttpPost]
-        public ActionResult<UserReadDto> CreateUser(UserCreateDto userCreateDto)
+        public ActionResult<UserReadDto> CreateUser([FromForm] UserCreateDto userCreateDto)
         {
             var userModel = _mapper.Map<User>(userCreateDto);
             _repository.CreateUser(userModel);

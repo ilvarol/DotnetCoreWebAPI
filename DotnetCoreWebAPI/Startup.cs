@@ -28,7 +28,7 @@ namespace DotnetCoreWebAPI
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            services.AddScoped<IUserRepo, MockUserRepo>();
+            services.AddScoped<IUserRepo, SqlUserRepo>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

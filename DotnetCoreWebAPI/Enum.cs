@@ -5,6 +5,7 @@ namespace DotnetCoreWebAPI
 {
         public enum Blood
         {
+            None,
             ARhDpositive,
             ARhDnegative,
             BRhDpositive,

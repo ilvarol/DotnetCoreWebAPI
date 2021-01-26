@@ -14,17 +14,16 @@
                 e.preventDefault();
 
                 var form = $(this);
-                var url = "/api/users";
+                var url = $(this).attr("action");
 
-                $.ajax({
-                    contentType: "application/json; charset=utf-8",
-                    type: "POST",
-                    url: url,
-                    data: JSON.stringify(form.serialize()),
-                    success: function (data) {
-                        alert(data);
-                    }
-                });
+                    $.ajax({
+                        type: "POST",
+                        url: url,
+                        data: form.serialize(),
+                        success: function (data) {
+                            alert("The operation is Successful");
+                        }
+                    });
             });
         });
     </script>
@@ -34,7 +33,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form id="idForm">
+        <form id="idForm" action="/api/users">
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
@@ -50,6 +49,7 @@
                 <select asp-for="Blood" asp-items="Html.GetEnumSelectList<DotnetCoreWebAPI.Blood>()" class="form-control">
                     <option selected="selected" value="">Please select</option>
                 </select>
+                <span asp-validation-for="Surname" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Cellphone" class="control-label"></label>

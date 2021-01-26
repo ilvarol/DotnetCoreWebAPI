@@ -7,7 +7,7 @@ namespace DotnetCoreWebAPI.Data
     {
         public void CreateUser(User user)
         {
-            throw new System.NotImplementedException();
+            new User { Id = 4, Name = user.Name, Surname = user.Surname, Blood = user.Blood, Cellphone = user.Cellphone, Adress = user.Adress };
         }
 
         public void DeleteUser(User user)
@@ -19,9 +19,9 @@ namespace DotnetCoreWebAPI.Data
         {
             var users = new List<User>()
             {
-                new User { Id = 0, Name = "ilyas", Surname = "varol", Blood = Blood.ABRhDpositive, Cellphone = "5307767295", Adress="Ümraniye" },
-                new User { Id = 1, Name = "Büşra", Surname = "varol", Blood = Blood.ABRhDpositive, Cellphone = "5307767295", Adress="Ümraniye" },
-                new User { Id = 2, Name = "Atabey", Surname = "varol", Blood = Blood.ABRhDpositive, Cellphone = "5307767295", Adress="Ümraniye" },
+                new User { Id = 1, Name = "ilyas", Surname = "varol", Blood = Blood.ABRhDpositive, Cellphone = "5307767295", Adress="Ümraniye" },
+                new User { Id = 2, Name = "Büşra", Surname = "varol", Blood = Blood.ABRhDpositive, Cellphone = "5307767295", Adress="Ümraniye" },
+                new User { Id = 3, Name = "Atabey", Surname = "varol", Blood = Blood.ABRhDpositive, Cellphone = "5307767295", Adress="Ümraniye" },
             };
 
             return users;
@@ -29,17 +29,17 @@ namespace DotnetCoreWebAPI.Data
 
         public User GetUserById(int id)
         {
-            return new User { Id = 0, Name = "ilyas", Surname = "varol", Blood = Blood.ABRhDpositive, Cellphone = "5307767295", Adress = "Ümraniye" };
+            return new User { Id = 1, Name = "ilyas", Surname = "varol", Blood = Blood.ABRhDpositive, Cellphone = "5307767295", Adress = "Ümraniye" };
         }
 
         public bool SaveChanges()
         {
-            throw new System.NotImplementedException();
+            return true;
         }
 
         public void UpdateUser(User user)
         {
-            throw new System.NotImplementedException();
+
         }
     }
 }
