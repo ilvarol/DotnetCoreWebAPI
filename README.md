@@ -3,7 +3,7 @@
 
 Technologies:
 
-Asp.Net Core 3.1
-EF Core
-Jquery
+Asp.Net Core 3.1  
+EF Core  
+Jquery  
 Bootstrap
